@@ -48,6 +48,6 @@ O script é **idempotente**, o que significa que ele pode ser executado várias 
 * `view_idade`
     * **O que faz:** Calcula a idade (em anos) de todos os administradores cadastrados.
 
-## 6. Autor
+## 5. Autor
 
 * **Kear_07** por Nutria
