@@ -66,8 +66,8 @@ CREATE TABLE acesso_diario (
     nCdAcesso   SERIAL PRIMARY KEY,
     nCdUsuario  INT,
     dDataAcesso DATE DEFAULT CURRENT_DATE,
-  
     CONSTRAINT uq_usuario_data UNIQUE (nCdUsuario, dDataAcesso),
+
     CONSTRAINT fk_acesso_diario_ref_usuario
         FOREIGN KEY (nCdUsuario) REFERENCES usuario(nCdUsuario)
         ON DELETE SET NULL
@@ -302,11 +302,12 @@ FROM ADMIN;
 
 
 ------------------------------------------- Í N D I C E S --------------------------------------------------------------
--- Otimiza a busca pelo histórico de user ------------------------------------------------------------------------------
+-- Otimiza a busca pelo histórico de user
 CREATE INDEX index_log_usuario_fk ON log_usuario(nCdUsuarioAfetado);
--- Otimiza a busca pelo histórico de admin -----------------------------------------------------------------------------
+
+-- Otimiza a busca pelo histórico de admin
 CREATE INDEX index_log_admin_fk ON log_admin(nCdAdminAfetado);
--- Otimiza a busca de acessos diários (DAU) de user --------------------------------------------------------------------
+
+-- Otimiza a busca de acessos diários (DAU) de user
 CREATE INDEX index_acesso_diario_fk ON acesso_diario(nCdUsuario);
 ------------------------------------------------------------------------------------------------------------------------
-
